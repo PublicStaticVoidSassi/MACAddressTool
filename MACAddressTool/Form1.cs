@@ -231,24 +231,10 @@ namespace MACAddressTool
             /// <returns>true if the string is a valid MAC address, false otherwise.</returns>
             public static bool IsValidMac(string mac, bool actual)
             {
-                // 6 bytes == 12 hex characters (without dashes/dots/anything else)
-                if (mac.Length != 12)
-                    return false;
-
-                // Should be uppercase
-                if (mac != mac.ToUpper())
-                    return false;
-
-                // Should not contain anything other than hexadecimal digits
-                if (!Regex.IsMatch(mac, "^[0-9A-F]*$"))
-                    return false;
-
-                if (actual)
+                if (actual || (mac.Length ==12 && mac == mac.ToUpper() && Regex.IsMatch(mac, "^[0-9A-F]*$"))){
                     return true;
-
-                // If we're here, then the second character should be a 2, 6, A or E
-                char c = mac[1];
-                return (c == '2' || c == '6' || c == 'A' || c == 'E');
+                }
+                return false;
             }
 
             /// <summary>

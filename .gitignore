@@ -15,6 +15,15 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+MACAddressTool/[Dd]ebug/
+MACAddressTool/[Dd]ebugPublic/
+MACAddressTool/[Rr]elease/
+MACAddressTool/x64/
+MACAddressTool/build/
+MACAddressTool/bld/
+MACAddressTool/[Bb]in/
+MACAddressTool/[Oo]bj/
+
 
 # Roslyn cache directories
 *.ide/
